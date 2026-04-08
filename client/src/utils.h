@@ -19,6 +19,7 @@ typedef enum
 typedef struct
 {
 	int size;
+	//int offset;
 	void* stream;
 } t_buffer;
 
