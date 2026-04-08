@@ -110,6 +110,7 @@ void leer_consola(t_log* logger)
 		log_info(logger, leido);
 
 
+
 		
 		
 	}
@@ -144,24 +145,26 @@ void paquete(int conexion)
 {
 	// Ahora toca lo divertido!
 	char* leido;
-	t_paquete* paquete = malloc(sizeof(t_paquete));
+	/*t_paquete* paquete = 
+	malloc(sizeof(t_paquete));
 	paquete->codigo_operacion = PAQUETE;
 	paquete->buffer = malloc(sizeof(t_buffer));
-	paquete->buffer->stream = NULL;
-
+	paquete->buffer->size =0;
+	paquete->buffer->stream = NULL*/
+	t_paquete* paquete = crear_paquete();
 
 
 	// Leemos y esta vez agregamos las lineas al paquete
-	//agregar_lectura_a_paquete(paquete);
+	agregar_lectura_a_paquete(paquete);
 	
 
 	
-	 
+	 /*
 		leido = readline("> ");
 
-		agregar_a_paquete(paquete,leido,strlen(leido)+1);	
+		agregar_a_paquete(paquete,leido, strlen(leido)+1);	
 	
-		free(leido);
+		free(leido);*/
 
 	enviar_paquete(paquete,conexion);
 	eliminar_paquete(paquete);

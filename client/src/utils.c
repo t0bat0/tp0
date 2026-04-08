@@ -64,6 +64,7 @@ void enviar_mensaje(char* mensaje, int socket_cliente)
 void crear_buffer(t_paquete* paquete)
 {
 	paquete->buffer = malloc(sizeof(t_buffer));
+	paquete->buffer->size = 0;
 	paquete->buffer->stream = NULL;
 }
 
